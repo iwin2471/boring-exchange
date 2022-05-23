@@ -1,0 +1,31 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'java'
+}
+
+group 'kim.younjune.boring'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+    // Serialize
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.0'
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.13.0'
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-smile', version: '2.13.0'
+
+    // Netty All
+    implementation group: 'io.netty', name: 'netty-all', version: '4.1.77.Final'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
